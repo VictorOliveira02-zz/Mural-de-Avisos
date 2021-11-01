@@ -3,11 +3,14 @@ import styled from 'styled-components'
 export const Segment = styled.div`
     background-image: linear-gradient(to right, #574AE8 , #3EA1DB);
     height: 200px;
-    width: 1440px;
+    width: 100%;
     border-radius: 0px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     text-align: center;
+
+    @media (min-width: 768px) {
+    }
 `;
 
 export const BoxRigth = styled.div`
@@ -46,6 +49,3 @@ export const BtnSubmit = styled.button`
     color: white;
     cursor: pointer;
 `;
-
-
-
