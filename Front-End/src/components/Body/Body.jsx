@@ -26,9 +26,7 @@ const Body = () => {
     useEffect(() => {
         loadPosts()
     }, [])
-
     console.log(posts)
-
     return (
         <>
             {posts && posts.map(post => (

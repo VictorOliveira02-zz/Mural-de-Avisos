@@ -7,7 +7,6 @@ router.use(express.urlencoded({ extended: true }));
 const accessibleUrl = {
     origin: 'http://localhost:3000',
 }
-
 router.use(cors(accessibleUrl));
 
 const posts = require('../model/posts');
@@ -25,9 +24,9 @@ router.post('/new', (req, res) => {
 })
 
 router.delete('/delete', (req, res) => {
-    let id = req.body.id;
-    posts.deletePost(id);
-    res.send(`idPost ${id} Delete!`);
+    let idItem = req.body.id;
+    posts.deletePost(idItem);
+    res.send(`idPost ${idItem} Delete!`);
 })
 
 module.exports = router;

@@ -10,7 +10,8 @@ export default class postApi {
     };
 
     static addPost = async (title, description) => {
-        const req = await api.post("/new", title, description);
+        const newJson = { "title": title, "description": description }
+        const req = await api.post("/new", newJson);
         return req.data;
     };
 
@@ -18,6 +19,5 @@ export default class postApi {
         const idJson = { "id": id }
         const req = await api.delete("/delete", idJson);
         return req.data
-
     };
 }

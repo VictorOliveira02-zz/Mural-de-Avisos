@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Segment, InputTitle, Form, TextArea, BtnSubmit, BoxRigth } from './style'
+import postApi from '../../api/data.api'
+
+const InitialState = {
+    title: '',
+    description: ''
+}
 
 const Header = () => {
+    const [newPost, setNewPost] = useState({ ...InitialState })
+
+    const newPosts = async () => {
+        try {
+            const response = await postApi.addPost(newPost.title, newPost.description)
+            setNewPost(response)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
         <>
             <Segment>
@@ -9,9 +26,19 @@ const Header = () => {
                     <h1>Mural de Avisos</h1>
                     <img src="icon.webp" alt="Logo" width="100" height="100" />
                 </BoxRigth>
-                <Form>
-                    <InputTitle placeholder='Digite o Título' ></InputTitle>
-                    <TextArea placeholder='Digite o Aviso' ></TextArea>
+                <Form onSubmit={newPosts}>
+                    <InputTitle
+                        required
+                        placeholder='Digite o Título'
+                        onChange={(e) => setNewPost({ ...newPost, title: e.target.value })}
+                        value={newPost.title}
+                    />
+                    <TextArea
+                        required
+                        placeholder='Digite o Aviso...'
+                        onChange={(e) => setNewPost({ ...newPost, description: e.target.value })}
+                        value={newPost.description}
+                    />
                     <BtnSubmit type="submit" >Avisar!</BtnSubmit>
                 </Form>
             </Segment>
