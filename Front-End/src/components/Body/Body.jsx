@@ -1,17 +1,47 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Post, BtnDelete } from './style'
-
+import postApi from '../../api/data.api'
 
 const Body = () => {
+    const [posts, setPosts] = useState()
+
+    const loadPosts = async () => {
+        try {
+            const response = await postApi.getAllPost()
+            setPosts(response)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const deletePost = async (id) => {
+        try {
+            const response = await postApi.delPost(id)
+            console.log(response)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        loadPosts()
+    }, [])
+
+    console.log(posts)
+
     return (
         <>
-            <Post>
-                <h1 className="post-title">TITULO DO AVISO</h1>
-                <p className="post-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vestibulum auctor est. Nam vitae finibus ante. Duis lobortis tellus vel diam fringilla, eu ullamcorper ex iaculis.</p>
-                <BtnDelete>
-                    <img src="trash.webp" alt="trash icon" width="40" height="40" />
-                </BtnDelete>
-            </Post>
+            {posts && posts.map(post => (
+                <Post key={post.id}>
+                    <h1 className="post-title">{post.title}</h1>
+                    <p className="post-content">{post.description}</p>
+                    <BtnDelete
+                        onClick={() => deletePost(post.id)}
+                    >
+                        <img src="trash.webp" alt="trash icon" width="40" height="40" />
+                    </BtnDelete>
+                </Post>
+            ))}
         </>
     )
 }
