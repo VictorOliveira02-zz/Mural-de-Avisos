@@ -8,8 +8,7 @@ export const Segment = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     text-align: center;
-
-    @media (min-width: 768px) {
+    @media (max-width: 768px) {
     }
 `;
 
@@ -17,19 +16,25 @@ export const BoxRigth = styled.div`
     display: block;
 `;
 
+export const DivImgs = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+`;
 
 export const Form = styled.form`
     width:100%;
     height:100%;
     display: grid;
 `;
-
-
 export const InputTitle = styled.input`
     height: 50%;
     width: 50%;
     border-radius: 5px;
     margin-top: 10px;
+    @media (max-width: 768px) {
+        width: 80%;
+}
 `;
 
 export const TextArea = styled.textarea`
@@ -39,7 +44,6 @@ export const TextArea = styled.textarea`
     margin-bottom: 0;
     border-radius: 5px;
 `;
-
 export const BtnSubmit = styled.button`
     background-color: #23CF5C;
     margin-top: 0px;
