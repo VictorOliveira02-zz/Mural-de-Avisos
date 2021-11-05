@@ -7,12 +7,13 @@ export const Post = styled.div`
     height: 195px;
     max-width: 900px;
     margin-left: 18%;
-    margin-top: 25px;
+    margin-top: 50px;
     border: black solid 1px;
     align-content: center;
     display: grid;
-
+    
     > .post-title{
+        margin-top: 50px;
         text-align: center;
     }
 
@@ -28,6 +29,8 @@ export const Post = styled.div`
 `;
 
 export const BtnDelete = styled.button`
+    width: 100%;
+    height: 100%;
     cursor: pointer;
     background: #ff5252;
         :hover{

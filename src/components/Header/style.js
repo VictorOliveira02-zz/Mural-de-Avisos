@@ -4,13 +4,9 @@ export const Segment = styled.div`
     background-image: linear-gradient(to right, #574AE8 , #3EA1DB);
     height: 200px;
     width: 100%;
-    border-radius: 0px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     text-align: center;
-    @media (max-width: 768px) {
-
-    }
 `;
 
 export const BoxRigth = styled.div`
@@ -20,7 +16,7 @@ export const BoxRigth = styled.div`
 export const DivImgs = styled.div`
     display: flex;
     flex-direction: row;
-    margin-left: 20px;
+    margin-left: 15px;
 `;
 
 export const Form = styled.form`
