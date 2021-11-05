@@ -8,7 +8,6 @@ export const Segment = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     text-align: center;
-
     @media (max-width: 768px) {
 
     }

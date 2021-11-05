@@ -26,7 +26,14 @@ const Header = () => {
                     <h1>Mural de Avisos</h1>
                     <img src="board.webp" alt="Logo" width="100" height="100" />
                     <DivImgs>
-                        <img src="github.png" alt="Logo-Github" width="50" height="40" />
+                        <a
+                            href="https://github.com/VictorOliveira02/Mural-de-Avisos"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ "cursor": 'pointer' }}
+                        >
+                            <img src="github.png" alt="Logo-Github" width="50" height="40" />
+                        </a>
                     </DivImgs>
                 </BoxRigth>
                 <Form onSubmit={newPosts}>
