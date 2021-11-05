@@ -9,7 +9,8 @@ export const Segment = styled.div`
     grid-template-columns: repeat(2, 1fr);
     text-align: center;
 
-    @media (min-width: 768px) {
+    @media (max-width: 768px) {
+
     }
 `;
 
@@ -17,6 +18,11 @@ export const BoxRigth = styled.div`
     display: block;
 `;
 
+export const DivImgs = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+`;
 
 export const Form = styled.form`
     width:100%;
@@ -30,6 +36,10 @@ export const InputTitle = styled.input`
     width: 50%;
     border-radius: 5px;
     margin-top: 10px;
+
+    @media (max-width: 768px) {
+        width: 80%;
+}
 `;
 
 export const TextArea = styled.textarea`

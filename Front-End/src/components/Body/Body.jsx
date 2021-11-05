@@ -18,6 +18,7 @@ const Body = () => {
         try {
             const response = await postApi.delPost(id)
             console.log(response)
+            loadPosts()
         } catch (error) {
             console.log(error)
         }
@@ -26,7 +27,7 @@ const Body = () => {
     useEffect(() => {
         loadPosts()
     }, [])
-    console.log(posts)
+
     return (
         <>
             {posts && posts.map(post => (

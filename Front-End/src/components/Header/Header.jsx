@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Segment, InputTitle, Form, TextArea, BtnSubmit, BoxRigth } from './style'
+import { Segment, InputTitle, Form, TextArea, BtnSubmit, BoxRigth, DivImgs } from './style'
 import postApi from '../../api/data.api'
 
 const InitialState = {
@@ -24,7 +24,10 @@ const Header = () => {
             <Segment>
                 <BoxRigth>
                     <h1>Mural de Avisos</h1>
-                    <img src="icon.webp" alt="Logo" width="100" height="100" />
+                    <img src="board.webp" alt="Logo" width="100" height="100" />
+                    <DivImgs>
+                        <img src="github.png" alt="Logo-Github" width="50" height="40" />
+                    </DivImgs>
                 </BoxRigth>
                 <Form onSubmit={newPosts}>
                     <InputTitle

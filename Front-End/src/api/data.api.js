@@ -16,8 +16,8 @@ export default class postApi {
     };
 
     static delPost = async (id) => {
-        const idJson = { "id": id }
-        const req = await api.delete("/delete", idJson);
+        console.log(id);
+        const req = await api.delete(`/delete`, { data: { "id": id } });
         return req.data
     };
 }

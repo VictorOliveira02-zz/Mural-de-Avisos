@@ -24,9 +24,8 @@ router.post('/new', (req, res) => {
 })
 
 router.delete('/delete', (req, res) => {
-    let idItem = req.body.id;
+    const idItem = req.body.id;
     posts.deletePost(idItem);
     res.send(`idPost ${idItem} Delete!`);
 })
-
 module.exports = router;
